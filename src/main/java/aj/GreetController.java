@@ -41,6 +41,9 @@ public class GreetController {
 	
 	 @Autowired
 	 public EmailService emailService;
+	 
+	 @Autowired
+	 public ShoppingCart shoppingCart;
 	
 	@GetMapping(path="/add")
 	public @ResponseBody String addNewGreet(@RequestParam String content)
@@ -61,8 +64,8 @@ public class GreetController {
 	public String emailrecipient() throws UnsupportedEncodingException, CannotSendEmailException
 	{
 	
-			sendEmailWithTemplating("meensat3@gmail.com");
-			//sendEmailWithoutTemplating(); 
+			//sendEmailWithTemplating("meensat3@gmail.com");
+			sendEmailWithoutTemplating(); 
 			return "hello";
 		
 	}
@@ -82,6 +85,15 @@ public class GreetController {
             System.out.println("Right here");
             model.addAttribute("message", "You successfully uploaded '" + file.getOriginalFilename() + "'");
             model.addAttribute("imageurl", uploadResult.get("url"));
+            
+            /*String filename = uploadResult.get("public_id").toString() + "." + uploadResult.get("format").toString();
+            model.addAttribute("sizedimageurl", cloudc.createUrl(filename,100,150, "fit"));
+            shoppingCart.addThings(filename);
+            model.addAttribute("filesuploaded", shoppingCart.getThings());*/
+            
+            System.out.println(shoppingCart.getThings());
+            
+            
         } catch (IOException e){
             e.printStackTrace();
             model.addAttribute("message", "Sorry I can't upload that!");
