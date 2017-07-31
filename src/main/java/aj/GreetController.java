@@ -106,8 +106,8 @@ public class GreetController {
 	
 	public void sendEmailWithTemplating(String recipient) throws UnsupportedEncodingException, CannotSendEmailException{
 	   final Email email = DefaultEmail.builder()
-	        .from(new InternetAddress("meensat3@gmail.com", "Meensat Tahzun"))
-	        .to(Lists.newArrayList(new InternetAddress("meensat3@gmail.com", "Lubaba")))
+	        .from(new InternetAddress("samazon.infosys@gmail.com", "Meensat Tahzun"))
+	        .to(Lists.newArrayList(new InternetAddress("samazon.infosys@gmail.com", "Lubaba")))
 	        .subject("Laelius de amicitia")
 	        .body("Firmamentum autem stabilitatis constantiaeque eius, quam in amicitia quaerimus, fides est.")
 	        .encoding("UTF-8").build();
@@ -120,9 +120,9 @@ public class GreetController {
 
 		  final Email email = DefaultEmail.builder()
 
-		        .from(new InternetAddress("meensat3@gmail.com", "Marco Tullio Cicerone "))
+		        .from(new InternetAddress("samazon.infosys@gmail.com", "Marco Tullio Cicerone "))
 
-		        .to(Lists.newArrayList(new InternetAddress("meensat3@gmail.com", "Pomponius Attĭcus")))
+		        .to(Lists.newArrayList(new InternetAddress("samazon.infosys@gmail.com", "Pomponius Attĭcus")))
 
 		        .subject("Laelius de amicitia")
 
